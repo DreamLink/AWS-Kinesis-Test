@@ -1,0 +1,31 @@
+group 'com.expedia.www'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile (
+            'com.amazonaws:aws-lambda-java-core:1.1.0',
+            'com.amazonaws:aws-lambda-java-events:1.1.0',
+            'com.amazonaws:amazon-kinesis-producer:0.12.9',
+            'com.amazonaws:amazon-kinesis-client:1.9.0'
+
+    )
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+mainClassName = 'com.expedia.www.ews.activity.service.Starter'
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
